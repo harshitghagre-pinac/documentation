@@ -61,10 +61,10 @@ sudo systemctl status prometheus
 [NodeExporter Documentation for Installation](https://prometheus.io/download/)
 
 ```
-wget https://github.com/prometheus/node_exporter/releases/download/v1.5.0/node_exporter-1.5.0.linux-amd64.tar.gz
-tar xvfz node_exporter-*.tar.gz
-sudo mv node_exporter-1.5.0.linux-amd64/node_exporter /usr/local/bin
-rm -r node_exporter-1.5.0.linux-amd64*
+wget https://github.com/prometheus/node_exporter/releases/download/v1.10.2/node_exporter-1.10.2.linux-amd64.tar.gz
+tar xvfz node_exporter-1.10.2.linux-amd64.tar.gz
+sudo mv node_exporter-1.10.2.linux-amd64/node_exporter /usr/local/bin
+rm -r node_exporter-1.10.2.linux-amd64*
 node_exporter
 sudo useradd -rs /bin/false node_exporter
 sudo nano /etc/systemd/system/node_exporter.service
