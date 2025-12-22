@@ -4,11 +4,11 @@
 [Promethus Documentation for Installation](https://prometheus.io/download/)
 
 ```
-wget https://github.com/prometheus/prometheus/releases/download/v2.37.6/prometheus-2.37.6.linux-amd64.tar.gz
-tar xvfz prometheus-*.tar.gz
+wget https://github.com/prometheus/prometheus/releases/download/v3.5.0/prometheus-3.5.0.linux-amd64.tar.gz
+tar -xvf prometheus-3.5.0.linux-amd64.tar.gz
 rm prometheus-*.tar.gz
 sudo mkdir /etc/prometheus /var/lib/prometheus
-cd prometheus-2.37.6.linux-amd64
+cd prometheus-3.5.0.linux-amd64
 sudo mv prometheus promtool /usr/local/bin/
 sudo mv prometheus.yml /etc/prometheus/prometheus.yml
 sudo mv consoles/ console_libraries/ /etc/prometheus/
