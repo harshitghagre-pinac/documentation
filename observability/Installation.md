@@ -15,6 +15,11 @@ sudo mv consoles/ console_libraries/ /etc/prometheus/
 prometheus --version
 
 ```
+Verify Promethus Config 
+```
+promtool check config /etc/prometheus/prometheus.yml
+
+```
 ## Configure Promethus as Service 
 
 ```
