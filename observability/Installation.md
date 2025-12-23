@@ -136,3 +136,78 @@ sudo systemctl status grafana-server
 
 
  ```
+# Apache Installation 
+```
+sudo apt update
+sudo apt install -y apache2
+sudo systemctl enable apache2
+sudo systemctl start apache2
+```
+## Verfiy Installation 
+
+```
+systemctl status apache2
+curl http://localhost
+
+```
+
+## Apache Exporter 
+
+```
+sudo a2enmod status
+sudo nano /etc/apache2/conf-available/status.conf
+
+Add this `<Location "/server-status">
+    SetHandler server-status
+    Require all granted
+</Location>
+
+sudo a2enconf status
+sudo systemctl reload apache2
+
+curl http://localhost/server-status?autofdfafdfjdjjjj
+
+wget https://github.com/Lusitaniae/apache_exporter/releases/latest/download/apache_exporter-0.11.0.linux-amd64.tar.gz
+tar xvf apache_exporter-*.tar.gz
+sudo mv apache_exporter-*/apache_exporter /usr/local/bin/
+
+wget https://github.com/Lusitaniae/apache_exporter/releases/latest/download/apache_exporter-0.11.0.linux-amd64.tar.gz
+tar xvf apache_exporter-*.tar.gz
+sudo mv apache_exporter-*/apache_exporter /usr/local/bin/
+
+sudo nano /etc/systemd/system/apache_exporter.service
+[Unit]
+Description=Apache Exporter
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/apache_exporter \
+  --scrape_uri=http://localhost/server-status?auto
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+sudo systemctl daemon-reload
+sudo systemctl enable apache_exporter
+sudo systemctl start apache_exporter
+
+curl http://localhost:9117/metrics
+
+```
+# Install MySQL
+
+```
+sudo apt install -y mysql-server
+sudo systemctl enable mysql
+sudo systemctl start mysql
+
+```
+# Verify Installation 
+
+```
+systemctl status mysql
+mysql -e "SELECT 1;"
+
+
+```
