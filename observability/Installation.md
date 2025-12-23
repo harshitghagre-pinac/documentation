@@ -167,12 +167,8 @@ sudo systemctl reload apache2
 
 curl http://localhost/server-status?autofdfafdfjdjjjj
 
-wget https://github.com/Lusitaniae/apache_exporter/releases/latest/download/apache_exporter-0.11.0.linux-amd64.tar.gz
-tar xvf apache_exporter-*.tar.gz
-sudo mv apache_exporter-*/apache_exporter /usr/local/bin/
-
-wget https://github.com/Lusitaniae/apache_exporter/releases/latest/download/apache_exporter-0.11.0.linux-amd64.tar.gz
-tar xvf apache_exporter-*.tar.gz
+ wget https://github.com/Lusitaniae/apache_exporter/releases/latest/download/apache_exporter-1.0.10.linux-amd64.tar.gz
+tar xvf apache_exporter-1.0.10.linux-amd64.tar.gz
 sudo mv apache_exporter-*/apache_exporter /usr/local/bin/
 
 sudo nano /etc/systemd/system/apache_exporter.service
